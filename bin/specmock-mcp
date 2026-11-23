@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Starts specmock for the Claude Code plugin. Builds on first run when installed from git.
+# Spec: $SPECMOCK_SPEC (path or URL-less file), defaulting to the bundled Ledger example.
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+if [[ ! -f "$ROOT/dist/cli.js" ]]; then
+  echo "specmock: first run, building..." >&2
+  (cd "$ROOT" && npm install --silent --no-audit --no-fund >&2 && npm run --silent build >&2)
+fi
+exec node "$ROOT/dist/cli.js" "${SPECMOCK_SPEC:-$ROOT/examples/ledger.yaml}" --port "${SPECMOCK_PORT:-4010}" "$@"

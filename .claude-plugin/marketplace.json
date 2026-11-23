@@ -1,0 +1,13 @@
+{
+  "name": "specmock",
+  "owner": { "name": "Filip Popov", "url": "https://github.com/filipopov" },
+  "metadata": { "description": "specmock: OpenAPI mocks that AI assistants can drive" },
+  "plugins": [
+    {
+      "name": "specmock",
+      "source": "./",
+      "description": "Stateful OpenAPI mock server with MCP tools for scenarios, fault injection and request inspection, plus a /specmock:scenario command.",
+      "category": "development"
+    }
+  ]
+}

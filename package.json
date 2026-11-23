@@ -1,0 +1,33 @@
+{
+  "name": "specmock",
+  "version": "0.1.0",
+  "description": "Turn any OpenAPI spec into a stateful mock API that Claude, ChatGPT and your app share: seed data, inspect state and inject faults by asking.",
+  "type": "module",
+  "bin": { "specmock": "dist/cli.js" },
+  "files": ["dist", "examples", "README.md", "LICENSE"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "prepare": "npm run build"
+  },
+  "keywords": ["openapi", "mock", "mcp", "claude", "chatgpt", "api", "testing", "model-context-protocol"],
+  "author": "Filip Popov",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/filipopov/specmock.git" },
+  "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^16.0.8",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vitest": "^5.1.1"
+  }
+}

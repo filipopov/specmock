@@ -1,0 +1,15 @@
+{
+  "name": "specmock",
+  "version": "0.1.0",
+  "description": "Stateful mock of any OpenAPI spec that Claude can drive: seed data, set up scenarios, inject faults and read what your app sent, while your app calls the same mock over HTTP.",
+  "author": { "name": "Filip Popov", "url": "https://github.com/filipopov" },
+  "homepage": "https://github.com/filipopov/specmock",
+  "repository": "https://github.com/filipopov/specmock",
+  "license": "MIT",
+  "keywords": ["openapi", "mock", "testing", "api", "mcp", "fault-injection"],
+  "mcpServers": {
+    "specmock": {
+      "command": "${CLAUDE_PLUGIN_ROOT}/bin/specmock-mcp"
+    }
+  }
+}
